@@ -4,7 +4,7 @@ Bot klik Indomaret by Team @AnteiCodes
 ## FOR TERMUX/UBUNTU/SSH USER
 
 ```bash
-apt update && apt upgrade
+apt update
 apt install wget php curl -y
 git clone https://github.com/Anteicodes/klik-poinku
 cd klik-poinku

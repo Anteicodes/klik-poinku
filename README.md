@@ -14,5 +14,5 @@ php run.php
 | [![Arie](https://github.com/yanarie123.png?size=100)](https://github.com/yanarie123) 
 ----|
 [Arie](https://github.com/yanarie123) 
-Powered by AnteiCodes | Author / Creator
+Author / Creator
 

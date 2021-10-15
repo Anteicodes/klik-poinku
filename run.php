@@ -1176,7 +1176,7 @@ fwrite($file,"--------------------------------------------------------".PHP_EOL)
 fclose($file);  
 echo 'KUPON SUKSES DIAMBIL BOSS!!!'.PHP_EOL;
 echo 'Untuk melihat Kupon ketik cat kupon.txt'.PHP_EOL;
-goto welcome;
+die;
 
 
 }elseif($inputan == "exit"){die;}else{echo color("red","| Inputan anda salah!!! \n"); goto welcome;}

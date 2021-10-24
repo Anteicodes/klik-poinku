@@ -11,6 +11,12 @@ cd klik-poinku
 php run.php
 ```
 
+## UNTUK TERMUX/UBUNTU/SSH USER
+
+```bash
+Sehabis Daftar Klik indomaret lewat script wajib login melalui aplikasi Original Klik atau Lewat website klikindomaret.com
+```
+
 ## Pembelian token silahkan chat wa
 
 ```bash

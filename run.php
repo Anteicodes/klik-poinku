@@ -968,18 +968,17 @@ echo "\|||___||___|||/ ".PHP_EOL;
 echo "".PHP_EOL;
 echo "".PHP_EOL;
 // goto pin_asu;
-echo "Masukan Nomer Hpnya: ";
-$input_hp = fopen("php://stdin","r");
-$no_hp = trim(fgets($input_hp));
-$phone = "\"$no_hp\"";
-/////////////////////////////////
-
 echo "Masukan Token (Beli di Owner): ";
 
 $input_hp = fopen("php://stdin","r");
 
 $idhp = trim(fgets($input_hp));
 $idhp = "\"$idhp\"";
+echo "Masukan Nomer Hpnya: ";
+$input_hp = fopen("php://stdin","r");
+$no_hp = trim(fgets($input_hp));
+$phone = "\"$no_hp\"";
+/////////////////////////////////
 ////////////////////////////////
 $data_login = '{"deviceId":'.$idhp.',"phoneNumber":'.$phone.'}';
 

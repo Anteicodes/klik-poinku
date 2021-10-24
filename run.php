@@ -974,7 +974,11 @@ $no_hp = trim(fgets($input_hp));
 $phone = "\"$no_hp\"";
 /////////////////////////////////
 
-$idhp = substr(md5(rand()), 0, 16);
+echo "Masukan Token (Beli di Owner): ";
+
+$input_hp = fopen("php://stdin","r");
+
+$idhp = trim(fgets($input_hp));
 $idhp = "\"$idhp\"";
 ////////////////////////////////
 $data_login = '{"deviceId":'.$idhp.',"phoneNumber":'.$phone.'}';

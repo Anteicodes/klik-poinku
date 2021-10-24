@@ -233,7 +233,7 @@ echo color("yellow","| @Anteiku Codes \n");
 echo color("green","| Time    :".date('[d-m-Y] [H:i:s]')."\n");
 echo color("purple", "| -------------------------------- \n");
 echo color("green","| 1. Login + Tempel VC Klik \n");
-echo color("nevy","| 2. Daftar Klik \n");
+echo color("nevy","| 2. Daftar Klik (Habis Daftar jangan lupa login dulu diweb/aplikasi klik)\n");
 echo color("nevy","| 3. Cek Lokasi / Kode TOKO / Kode REFF\n");
 echo color("nevy","| 4. Rubah password + Nama Default Klik (Wajib setting jika baru pertama kali install script) \n");
 echo color("nevy","| 6. Indomaret pointku (SMS OTP) (Token dibutuhkan) \n");
@@ -275,23 +275,24 @@ if ($inputan == "1"){ //Login
 
     $token = $hasil_login['ResponseID'];
     $ID = $hasil_login['ResponseObject']['ID'];
+    echo color("red","[!] PASTIKAN AKUN INI SUDAH PERNAH LOGIN PERTAMA-KALI DIAPLIKASI/WEB KLIK INDOMARET");
     // print_r($hasil_login);
 
     tebas_toko:
-    echo color("yellow","| Daerah Kota/Kabupaten: ");
-    $input_hp = fopen("php://stdin","r");
-    $kata_kunci = trim(fgets($input_hp));
-    $nomer = 0;
-    $url = "https://www.klikindomaret.com/checkout/getlistautocompletestore";
-    $data = 'StoreCode='.$kata_kunci.'&customerLatitude=0&customerLongitude=0';
-    $login = sate_ayam($url, ['Content-Type: application/x-www-form-urlencoded'],$data);
-    $data = json_decode($login,true);
-    echo PHP_EOL;
-    for($a=0; $a < count($data); $a++ )
-   {
-    $nomer++;
-    $str = str_replace(["\n","\r"],"",$data[$a]['label']);
-    echo color("yellow","| $nomer | ".$str."\n");}
+//     echo color("yellow","| Daerah Kota/Kabupaten: ");
+//     $input_hp = fopen("php://stdin","r");
+//     $kata_kunci = trim(fgets($input_hp));
+//     $nomer = 0;
+//     $url = "https://www.klikindomaret.com/checkout/getlistautocompletestore";
+//     $data = 'StoreCode='.$kata_kunci.'&customerLatitude=0&customerLongitude=0';
+//     $login = sate_ayam($url, ['Content-Type: application/x-www-form-urlencoded'],$data);
+//     $data = json_decode($login,true);
+//     echo PHP_EOL;
+//     for($a=0; $a < count($data); $a++ )
+//    {
+//     $nomer++;
+//     $str = str_replace(["\n","\r"],"",$data[$a]['label']);
+//     echo color("yellow","| $nomer | ".$str."\n");}
 
     echo color("yellow", "| Masukan KODE TOKO: ");
     $input_hp = fopen("php://stdin","r");
@@ -377,7 +378,7 @@ if ($inputan == "1"){ //Login
         echo color("yellow","| Troli anda kosong! Pastikan kode toko benar!!"); goto welcome; }else{
     echo color("green",'| Troli Anda '.$hasil_cek_troli['Quantity']."\n");
 
-    $url_cek_troli2 = 'https://www.klikindomaret.com/cart/recheckstockallitem?StoreCode='.$KODE_TOKO.'&AddressType=0';
+    $url_cek_troli2 = 'https://www.klikindomaret.com/cart/recheckstockallitem?StoreCode='.$KODE_TOKO.'&AddressType=0&StoreCodeDest=&PromoPackage=&CustomerAddressID=';
     $toko_anda = get_noheader($url_cek_troli2,$header_sudah_token2);
 
     $resp = json_decode($toko_anda,true);

@@ -297,7 +297,7 @@ if ($inputan == "1"){ //Login
     // echo color("yellow", "| Masukan KODE TOKO: ");
     // $input_hp = fopen("php://stdin","r");
     // $KODE_TOKO = trim(fgets($input_hp));
-     $KODE_TOKO = "T0PO";
+     $KODE_TOKO = "FTPX";
 
 
     //Cek stok & ambil cookie

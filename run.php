@@ -278,26 +278,25 @@ if ($inputan == "1"){ //Login
     // print_r($hasil_login);
 
     tebas_toko:
-//     echo "Daerah Kota/Kabupaten toko anda: ";
-//     $input_hp = fopen("php://stdin","r");
-//     $kata_kunci = trim(fgets($input_hp));
+    echo color("yellow","| Daerah Kota/Kabupaten: ");
+    $input_hp = fopen("php://stdin","r");
+    $kata_kunci = trim(fgets($input_hp));
+    $nomer = 0;
+    $url = "https://www.klikindomaret.com/checkout/getlistautocompletestore";
+    $data = 'StoreCode='.$kata_kunci.'&customerLatitude=0&customerLongitude=0';
+    $login = sate_ayam($url, ['Content-Type: application/x-www-form-urlencoded'],$data);
+    $data = json_decode($login,true);
+    echo PHP_EOL;
+    for($a=0; $a < count($data); $a++ )
+   {
+    $nomer++;
+    $str = str_replace(["\n","\r"],"",$data[$a]['label']);
+    echo color("yellow","| $nomer | ".$str."\n");}
 
-//     $url = "https://www.klikindomaret.com/checkout/getlistautocompletestore?StoreCode=$kata_kunci";
-//     $login = cek($url, $header_toko);
-//     $data = json_decode($login);
-//     $data = json_decode($data,true);
-//     $nomer = 0;
-//     echo PHP_EOL;
-//     for($a=0; $a < count($data); $a++ )
-//    {
-//     $nomer++;
-//     $str = str_replace(["\n","\r"],"",$data[$a]['label']);
-//     echo "$nomer : ".$str.PHP_EOL;}
-
-    // echo color("yellow", "| Masukan KODE TOKO: ");
-    // $input_hp = fopen("php://stdin","r");
-    // $KODE_TOKO = trim(fgets($input_hp));
-     $KODE_TOKO = "FTPX";
+    echo color("yellow", "| Masukan KODE TOKO: ");
+    $input_hp = fopen("php://stdin","r");
+    $KODE_TOKO = trim(fgets($input_hp));
+    //  $KODE_TOKO = "FTPX";
 
 
     //Cek stok & ambil cookie
@@ -514,7 +513,6 @@ if ($inputan == "1"){ //Login
     $data = 'StoreCode='.$kata_kunci.'&customerLatitude=0&customerLongitude=0';
     $login = sate_ayam($url, ['Content-Type: application/x-www-form-urlencoded'],$data);
     $data = json_decode($login,true);
-    print_r($data);
     echo PHP_EOL;
     for($a=0; $a < count($data); $a++ )
    {

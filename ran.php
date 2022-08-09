@@ -664,7 +664,7 @@ if ($fcmcek !== false){
     echo "| FCM : $pesan \n";
 }
 //CEK PIN
-pin_asu:
+pin_asu:123123
 //$token ='eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2OFMwalUzbGdFaU1zbzFWRDgzRHhhdEk3blkxLU9WR1dQSVI4d0F2MVgwIn0.eyJleHAiOjE2NjUwNTgwMjQsImlhdCI6MTYzMzUyMjAyNCwianRpIjoiY2VmMDBjNDUtODBjMi00M2I2LTlkNGUtODc4OTkzZTJhOWVlIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrLmtleWNsb2FrLWhhL2F1dGgvcmVhbG1zL2lkbS1hcHAiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTYxM2JkYjQtYTQyYi00ZjNmLWJjZjctMjM2OTc4NmRlMjdhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiaWRtLWJvIiwic2Vzc2lvbl9zdGF0ZSI6Ijg0OTk5ZWJhLTgyZjUtNGMwYi05OWYzLTE3MDlhZTAwY2U5NyIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1pZG0tYXBwIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSBtb2JpbGUiLCJzaWQiOiI4NDk5OWViYS04MmY1LTRjMGItOTlmMy0xNzA5YWUwMGNlOTciLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlkIjo5NDIwOTE4LCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIwODU3ODI5NDY5Njg6OjFkMjZlMWY1YmQ4NzBlNjNmZTBjNGE2OTU5ZWJlMjM3In0.UoRi5fypG-DpfeoL_dbMMNnoDEZMcLjoC7ShbyQ3S0hBrDVviW8LGSiOymqqq5ce45cCU7qJWrpy1vomR7OrA4zTLC5A-GaXwkMV2PsNaeP5CV4mQtWqFyZqVFSOvyDZRCDgrmuzAdwRd5BtUVCRdWBfaCoLrAOAWJLkOlw2QayrGCzvM9Sby8brw199smo8IjhZAWzGzjtui3WiG2dbdWqsX-confv3uRsfXyZu0h-bVmvZRtN5Tr81ZY37JZQzkKbGOlG90pHJOHLYIad9gBg_WC2Ue6xEKE3qo0UR5H_8wspEn69dPDquEh_fMByEXUQ34dpHWFhE0PYdyPH5WQ';
 $header_token = [
     'Authorization: Bearer '.$token,
@@ -681,7 +681,7 @@ $cekpin = sate_ayam($url_cek_pin,$header_token,$data_pin);
 $cekpin = json_decode($cekpin,true);
 //Buat PIN!!!!!
 if ($cekpin['data'] !== true){
-    create_pin:
+    create_pin:123123
     $create_pin = json_decode(create_pin1($token),true);
     if ($create_pin['status'] == "00"){
         echo "| Sukses membuat PIN : 123123 \n";
@@ -695,7 +695,7 @@ if ($cekpin['data'] !== true){
         die;
     }
 }else{
-    validate_pin:
+    validate_pin:123123
     echo "| Masukan Kode PIN: ";
     $inputan = fopen("php://stdin","r");
     $kode_pin = trim(fgets($inputan));
